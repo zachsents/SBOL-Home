@@ -55,7 +55,7 @@ The embedded SBOL Canvas designer.
 The simulator.
 ## Run Locally
 
-This is a monorepo of a several services combined using Docker Compose.
+This is a monorepo of several services combined using Docker Compose.
 
 Clone the project
 
