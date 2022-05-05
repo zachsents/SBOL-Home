@@ -1,0 +1,38 @@
+{
+  "name": "sbol-home",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@honkhonk/vite-plugin-svgr": "^1.1.0",
+    "@mantine/core": "^4.1.4",
+    "@mantine/form": "^4.1.4",
+    "@mantine/hooks": "^4.1.4",
+    "@visx/curve": "^2.1.0",
+    "@visx/glyph": "^2.1.2",
+    "@visx/legend": "^2.2.2",
+    "@visx/pattern": "^2.1.2",
+    "@visx/react-spring": "^2.6.0",
+    "@visx/responsive": "^2.8.0",
+    "@visx/scale": "^2.2.2",
+    "@visx/xychart": "^2.9.0",
+    "localstoragedb": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.2",
+    "react-spinners": "^0.11.0",
+    "react-spring": "^9.4.4",
+    "recharts": "^2.1.9",
+    "short-uuid": "^4.2.0",
+    "visbol-react": "^1.0.92"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.8.0"
+  }
+}
