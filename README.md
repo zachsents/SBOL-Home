@@ -81,4 +81,4 @@ Start the services
   docker-compose up
 ```
 
-The app will be exposed on at http://localhost:3001.
+The app will be exposed at http://localhost:3001.
