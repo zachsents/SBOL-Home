@@ -13,10 +13,10 @@ const bucket = new GridFSBucket(db)
 export async function status(req, res) {
 
     // find document in database
-    const { status } = await jobsCollection.findOne(ObjectId(req.params.jobId))
+    const document = await jobsCollection.findOne(ObjectId(req.params.jobId))
 
     // respond
-    res.json({ status })
+    res.json({ status: document?.status || Status.IDLE })
 }
 
 export async function zip(req, res) {
