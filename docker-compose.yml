@@ -4,8 +4,8 @@ services:
   api:
     build:
       context: ./
-      dockerfile: api/Dockerfile
-    container_name: home-api
+      dockerfile: ./api/Dockerfile
+    container_name: api
     depends_on:
       - mongodb
     restart: unless-stopped
@@ -21,21 +21,18 @@ services:
       - MONGO_PORT
       - DB_NAME
       - NODE_ENV
-      - JOB_STORAGE_FOLDER
       - JOB_COLLECTION
-    volumes:
-      - job-storage:/app/${JOB_STORAGE_FOLDER}
   
   watcher:
     build:
       context: ./
-      dockerfile: watcher/Dockerfile
-    container_name: home-watcher
+      dockerfile: ./watcher/Dockerfile
+    container_name: watcher
     depends_on:
       - mongodb
     restart: unless-stopped
-    networks:
-      - app-network
+    #networks:
+    #  - app-network
     environment:
       - MONGO_USER
       - MONGO_PASS
@@ -43,14 +40,12 @@ services:
       - MONGO_PORT
       - DB_NAME
       - NODE_ENV
-      - JOB_STORAGE_FOLDER
       - JOB_COLLECTION
       - IBIOSIM_URL
       - MAX_CONCURRENT_JOBS
-    volumes:
-      - job-storage:/app/${JOB_STORAGE_FOLDER}
+  
   mongodb:
-    container_name: home-db
+    container_name: db
     image: mongo
     restart: unless-stopped
     ports:
@@ -77,7 +72,7 @@ services:
     build:
       context: ./canvas
       dockerfile: ./Dockerfile
-    container_name: home-canvas
+    container_name: canvas
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -89,8 +84,8 @@ services:
   home-frontend:
     build:
       context: ./
-      dockerfile: home-frontend/Dockerfile
-    container_name: home-app
+      dockerfile: ./home-frontend/Dockerfile
+    container_name: frontend
     restart: unless-stopped
     ports:
       - "3001:3001"
@@ -105,4 +100,3 @@ networks:
 
 volumes:
     data-volume:
-    job-storage:
