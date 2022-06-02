@@ -14,7 +14,7 @@ RUN resources/build_automation/build_backend.sh
 
 ## Build angular stuff and copy into WEB-INF
 RUN apk add --update nodejs npm
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@7.3.7
 RUN apk add git
 
 WORKDIR ./SBOLCanvasFrontend
